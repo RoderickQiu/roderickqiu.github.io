@@ -33,7 +33,7 @@ a:active {
 }
 #titlediv{
     position: absolute;
-    top: 30%;
+    top: 23%;
     left: 50%;
     transform: translateY(-30%);
     transform: translateX(-50%);
@@ -45,6 +45,10 @@ a:active {
 }
 #aboutme{
     font-size: 28px;
+    color: rgb(39, 39, 39);
+}
+#more_aboutme{
+    font-size: 23px;
     color: rgb(39, 39, 39);
 }
 #contactme{
