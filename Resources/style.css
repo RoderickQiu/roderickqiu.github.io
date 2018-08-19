@@ -38,8 +38,10 @@ a:active {
     transform: translateY(-30%);
     transform: translateX(-50%);
     text-align: center;
-    font-size: 54px;
     color: rgb(5, 5, 11)
+}
+#rqdiv{
+    font-size: 54px;
 }
 #aboutme{
     font-size: 28px;
