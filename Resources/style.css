@@ -1,10 +1,13 @@
 @font-face{
-    font-family: "Dubai Medium", sans-serif;
-    src: "Resources/Dubai-Medium.ttf";
+    font-family: "Dubai Medium";
+    src: url('DubaiW23-Medium.ttf'),
+         url('DubaiW23-Medium.eot'),
+         url('DubaiW23-Medium.woff'),
+         url('DubaiW23-Medium.woff2');
 }
 
 body{
-    font-family: "Dubai Medium";
+    font-family: "Dubai Medium", sans-serif;
     background-color: #f7f7f7;
 }
 a:link {
@@ -36,7 +39,7 @@ a:active {
     transform: translateX(-50%);
     text-align: center;
     font-size: 54px;
-    color: rgba(5, 5, 5, 11)
+    color: rgb(5, 5, 11)
 }
 #aboutme{
     font-size: 28px;
