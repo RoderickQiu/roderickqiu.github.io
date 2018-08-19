@@ -1,0 +1,48 @@
+@font-face{
+    font-family: "Dubai Medium", sans-serif;
+    src: "Resources/Dubai-Medium.ttf";
+}
+
+body{
+    font-family: "Dubai Medium";
+    background-color: #f7f7f7;
+}
+a:link {
+    color:rgb(105, 105, 105);
+    text-decoration:none;
+}
+a:visited {
+    color:rgb(51, 51, 51);
+    text-decoration:none;
+}
+a:hover {
+    color:rgb(179, 179, 179);
+    text-decoration: underline;
+}
+a:active {
+    color:rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+#maindiv{
+    display:flex;
+    align-items:center;
+}
+#titlediv{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateY(-30%);
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 54px;
+    color: rgba(5, 5, 5, 11)
+}
+#aboutme{
+    font-size: 28px;
+    color: rgb(39, 39, 39);
+}
+#contactme{
+    font-size: 15px;
+    color: rgb(39, 39, 39);
+}
