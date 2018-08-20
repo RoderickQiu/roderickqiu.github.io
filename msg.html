@@ -11,7 +11,7 @@
         <meta name="viewport" content="minimal-ui">
         <meta name="apple-mobile-web-app-capable" content="yes"> <!-- For iOS Safari -->
         <meta name="renderer" content="webkit"><!-- For 360 Browser -->
-        <title>Roderick Qiu</title>
+        <title>Message Board</title>
         <script type="text/javascript"> 
             var _hmt = _hmt || [];
             (function() {
@@ -21,22 +21,25 @@
                 s.parentNode.insertBefore(hm, s);
             })();
         </script><!-- Baidu Tongji -->
+        <script type="text/javascript" src="Resources/av-min.js"></script>
+        <script type="text/javascript" src="Resources/Valine.min.js"></script><!-- Valine Message Board -->
     </head>
     <body>
         <div id="maindiv">
-            <div id="titlediv">
-                <div id="rqdiv">Roderick Qiu</div>
-                <div id="aboutme">Yet another konjac</div></td>
-                <div id="contactme">
-                    <br/>
-                    By Roderick Qiu<br/>Find me &amp; Contact with me via: 
-                    <a href="https://github.com/RoderickQiu" target="_blank">Github</a>
-                    <a href="https://www.luogu.org/space/show?uid=85839" target="_blank">Luogu</a>
-                    <a href="mymail.html" target="_self">Email</a>
-                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1514303703&site=qq&menu=yes" target="_blank">QQ</a>
-                   <br/><a href="me.html" target="_self">And More</a>
-                    |&nbsp;<a href="msg.html" target="_self">Message Board</a>
-                </div>
+            <div id="msgdiv">
+                <div id="rqdiv">Message Board</div>
+                <div id="vcomments"></div>
+                <script>
+                    new Valine({
+                        el: '#vcomments',
+                        appId: 'C1GnngV3vvtztTKzvP6K9y4F-MdYXbMMI',
+                        appKey: 'lwlLVyJteUk0J36d2lJMB1gM',
+                        lang: 'en',
+                        placeholder: 'Leave a message',
+                        verify: true
+                    })
+                </script>
+                <a id="aboutme" href="javascript:history.go(-1)" target="_self">Back</a>
             </div>
         </div>
     </body>

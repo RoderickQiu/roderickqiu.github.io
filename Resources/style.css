@@ -54,6 +54,15 @@ a:active {
     text-align: center;
     color: rgb(5, 5, 11)
 }
+#msgdiv{
+    position: absolute;
+    top: 3%;
+    left: 50%;
+    transform: translateY(-30%);
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgb(5, 5, 11)
+}
 #rqdiv{
     font-size: 54px;
 }
