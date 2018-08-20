@@ -6,9 +6,23 @@
          url('DubaiW23-Medium.woff2');
 }
 
+@keyframes fade-in {  
+    0% {opacity: 0;} 
+    20% {opacity: 0;}  
+    100% {opacity: 1;} 
+}  
+@-webkit-keyframes fade-in {
+    0% {opacity: 0;}  
+    20% {opacity: 0;}
+    100% {opacity: 1;}  
+}
+
 body{
     font-family: "Dubai Medium", sans-serif;
     background-color: #f7f7f7;
+    animation: fade-in;
+    animation-duration: 1s;
+    -webkit-animation:fade-in 1s;
 }
 a:link {
     color:rgb(105, 105, 105);
