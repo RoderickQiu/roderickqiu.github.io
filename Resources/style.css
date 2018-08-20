@@ -41,17 +41,38 @@ a:active {
     text-decoration: underline;
 }
 
+@media screen and (orientation:landscape) {
+    #titlediv{  
+        position: absolute;
+        top: 23%;
+        left: 50%;
+        transform: translateY(-30%);
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    #rqdiv{
+        font-size: 54px;
+    }
+}
+@media screen and (orientation:portrait) {
+    #titlediv{  
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateY(-30%);
+        transform: translateX(-50%);
+        text-align: center;
+    }
+    #rqdiv{
+        font-size: 54px;
+    }
+}
+
 #maindiv{
     display: flex;
     align-items: center;
 }
 #titlediv{
-    position: absolute;
-    top: 23%;
-    left: 50%;
-    transform: translateY(-30%);
-    transform: translateX(-50%);
-    text-align: center;
     color: rgb(5, 5, 11)
 }
 #msgdiv{
@@ -62,9 +83,6 @@ a:active {
     transform: translateX(-50%);
     text-align: center;
     color: rgb(5, 5, 11)
-}
-#rqdiv{
-    font-size: 54px;
 }
 #aboutme{
     font-size: 28px;
