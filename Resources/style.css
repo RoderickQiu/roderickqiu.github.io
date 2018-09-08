@@ -21,7 +21,7 @@
     }
 }
 @media screen and (orientation:portrait) {
-    main{  
+    #main{  
         position: absolute;
         top: 15%;
         left: 50%;
