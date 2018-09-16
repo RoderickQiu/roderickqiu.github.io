@@ -7,7 +7,7 @@
 }
 
 @media screen and (orientation:landscape) {
-    #main{  
+    body{  
         position: absolute;
         top: 28%;
         left: 50%;
@@ -21,7 +21,7 @@
     }
 }
 @media screen and (orientation:portrait) {
-    #main{  
+    body{  
         position: absolute;
         top: 15%;
         left: 50%;
@@ -38,10 +38,12 @@
 body{
     font-family: "Dubai Light", sans-serif;
     background-color: #fdfdfd;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 a:link {
-    color: rgb(168, 168, 168);
+    color: rgb(39, 39, 39);
     text-decoration: none;
 }
 a:visited {
