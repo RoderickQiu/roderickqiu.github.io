@@ -6,6 +6,11 @@
          url('DubaiW23-Light.woff2');
 }
 
+@keyframes bgChanger{
+    from {background: #fbfbfb;}
+    to {background: #ffffff;}
+}
+
 @media screen and (orientation:landscape) {
     body{  
         position: absolute;
@@ -37,9 +42,9 @@
 
 body{
     font-family: "Dubai Light", sans-serif;
-    background-color: #fdfdfd;
     -webkit-user-select: none;
     user-select: none;
+    animation: bgChanger 5s infinite alternate;
 }
 
 a:link {
@@ -47,7 +52,7 @@ a:link {
     text-decoration: none;
 }
 a:visited {
-    color: rgb(114, 114, 114);
+    color: rgb(39, 39, 39);
     text-decoration: none;
 }
 a:hover {
@@ -62,8 +67,4 @@ a:active {
 #aboutme{
     font-size: 20px;
     color: rgb(39, 39, 39);
-}
-
-#smallbr{
-    font-size: 4px;
 }
