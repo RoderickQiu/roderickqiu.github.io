@@ -15,119 +15,87 @@
     <meta property="og:url" content="https://roderickqiu.scris.top/" />
     <meta name="author" content="Roderick Qiu">
     <meta name="description" content="Hey! This is Roderick Qiu." />
-    <meta name="keywords"
-        content="RoderickQiu, Roderick, Qiu, homepage, roderickqiu.scris.top, roderickqiu.github.io, scris" />
+    <meta name="keywords" content="RoderickQiu, Roderick, Qiu, roderickqiu.scris.top, roderickqiu.github.io, scris" />
     <!-- For Search Engines -->
-    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: "Dl";
-            src: url('DubaiW23-Light.ttf'),
-                url('DubaiW23-Light.eot'),
-                url('DubaiW23-Light.woff'),
-                url('DubaiW23-Light.woff2');
-        }
-
-        html,
-        body {
-            font-family: "Dubai Light", "Dubai", "Dl", "Source Han Sans CN", -apple-system, "Microsoft YaHei UI", "微软雅黑", sans-serif;
-            background-color: #fefefe;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            align-items: center;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-
-            html,
-            body {
-                height: 100%;
-            }
-        }
-    </style>
+    <link href="res/bootstrap-grid-4.3.1.css" rel="stylesheet" />
+    <link href="res/style.css" rel="stylesheet" />
 </head>
 
-<body>
-    <div class="container-fluid mt-3 mx-auto">
-        <div class="d-flex p-3 justify-content-center row">
-            <div class="col-lg-6 col-md-8">
-                <h1 class="text-dark">This is <b>Roderick Qiu</b></h1>
-                <p class="lead">
-                    I'm a student from <a href="http://chinahw.net/" target="_blank">HFLS</a>,
-                    and also a software developer, a game developer, a front-end developer
-                    & a <a href="https://luogu.org/" target="_blank">OIer</a>.
-                    I'm currently in Hangzhou, China.
-                    <br />
-                    I can use a variety of tools, include:
-                </p>
-                <dl class="lead">
-                    <dt>for front-end development</dt>
-                    <dd>&ThickSpace;- Bootstrap, CSS3, HTML5 and JS.</dd>
-                    <dt>for software development</dt>
-                    <dd>&ThickSpace;- C++ and Electron.</dd>
-                    <dt>other tools</dt>
-                    <dd>&ThickSpace;- Markdown, Photoshop, PremierePro and Unity.</dd>
-                </dl>
-                <p class="lead">
-                    If you wanna chat, drop me an email to <a
-                        href="mailto:scrisqiu@hotmail.com">scrisqiu@hotmail.com</a>,
-                    or via <a href="http://wpa.qq.com/msgrd?v=3&uin=1514303703&site=qq&menu=yes" target="_blank">QQ</a>.
-                    And in case you wanna know me more, please visit my
-                    <a href="https://github.com/RoderickQiu" target="_blank">Github</a>, my <a
-                        href="https://www.luogu.org/space/show?uid=85839" target="_blank">Luogu</a>
-                    or my <a href="https://www.zhihu.com/people/_Qiu" target="_blank">Zhihu</a>.
-                </p>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <h2>My Work</h2>
-                <dl>
-                    <dd>
-                        &ThickSpace;- <b>PiedonPiedon</b> <a href="https://scris.top/piedon/"
-                            target="_blank">[Introduction]</a>
-                        <br /><span class="small text-muted">
-                            (You can go to the Windows Store or App Store and then search the name to find it.)
-                        </span>
-                    </dd>
-                    <dd>
-                        &ThickSpace;- <b>GradientNewTab</b> <a href="https://github.com/RoderickQiu/gradientnewtab"
-                            target="_blank">[GitHub]</a> <a
-                            href="https://roderickqiu.scris.top/GradientNewTab-Homepage/" target="_blank">[Homepage]</a>
-                        <br /><span class="small text-muted">
-                            (You can go to the Chrome Store and then search the name to find it.)
-                        </span>
-                    </dd>
-                    <dd>
-                        &ThickSpace;- <b>yDic</b> <a href="https://github.com/RoderickQiu/ydic"
-                            target="_blank">[GitHub]</a>
-                        <a href="https://ydic.scris.top/" target="_blank">[Homepage]</a>
-                        <br /><span class="small text-muted">
-                            (You can go to GitHub and download the newest release.)
-                        </span>
-                    </dd>
-                    <dd>
-                        &ThickSpace;- <b>wnr</b> <a href="https://github.com/RoderickQiu/wnr"
-                            target="_blank">[GitHub]</a>
-                        <a href="https://wnr.scris.top/" target="_blank">[Homepage]</a>
-                        <br /><span class="small text-muted">
-                            (You can go to GitHub and download the newest release.)
-                        </span>
-                    </dd>
-                    <dd>
-                        &ThickSpace;- <b>flowerpassword-electron</b> <a
-                            href="https://github.com/ScrisStudio/flowerpassword-electron" target="_blank">[GitHub]</a>
-                        <br /><span class="small text-muted">
-                            (You can go to GitHub and download the newest release.)
-                        </span>
-                    </dd>
-                </dl>
-                <hr />
-                <p class="small text-muted">&copy; Roderick Qiu. | <a href="https://scris.top/" target="_blank">Scris
-                        Studio</a></p>
-            </div>
+<body class="flex-column">
+    <div class="align-content-center">
+        <div class="container-fluid" id="main">
+            <br /><br />
+            <div class="title1">This is Roderick Qiu</div>
+            <span class="smalltitle">
+                I'm a student from <a href="http://chinahw.net/" target="_blank">HFLS</a>,
+                and also a software developer, a game developer, a front-end developer
+                & a <a href="https://luogu.org/" target="_blank">OIer</a>.
+            </span>
+            <p class="title2">I can Use:</p>
+            <ul class="info">
+                <dt>For front-end development</dt>
+                <li>Bootstrap, CSS3, HTML5 and JS.</li>
+                <dt>For software development</dt>
+                <li>C++ and Electron.</li>
+                <dt>Other tools</dt>
+                <li>Markdown, Photoshop, PremierePro and Unity.</li>
+            </ul>
+            <p class="title2">My Projects:</p>
+            <ul class="info">
+                <li>
+                    <b>PiedonPiedon</b> <a href="https://scris.top/piedon/" target="_blank">[Introduction]</a>
+                    <br /><span class="smalltext">
+                        (You can go to the Windows Store or App Store and then search the name to find it.)
+                    </span>
+                </li>
+                <li>
+                    <b>GradientNewTab</b> <a href="https://github.com/RoderickQiu/gradientnewtab"
+                        target="_blank">[GitHub]</a> <a href="https://roderickqiu.scris.top/GradientNewTab-Homepage/"
+                        target="_blank">[Homepage]</a>
+                    <br /><span class="smalltext">
+                        (You can go to the Chrome Store and then search the name to find it.)
+                    </span>
+                </li>
+                <li>
+                    <b>yDic</b> <a href="https://github.com/RoderickQiu/ydic" target="_blank">[GitHub]</a>
+                    <a href="https://ydic.scris.top/" target="_blank">[Homepage]</a>
+                    <br /><span class="smalltext">
+                        (You can go to GitHub and download the newest release.)
+                    </span>
+                </li>
+                <li>
+                    <b>wnr</b> <a href="https://github.com/RoderickQiu/wnr" target="_blank">[GitHub]</a>
+                    <a href="https://wnr.scris.top/" target="_blank">[Homepage]</a>
+                    <br /><span class="smalltext">
+                        (You can go to GitHub and download the newest release.)
+                    </span>
+                </li>
+                <li>
+                    <b>flowerpassword-electron</b> <a href="https://github.com/ScrisStudio/flowerpassword-electron"
+                        target="_blank">[GitHub]</a>
+                    <br /><span class="smalltext">
+                        (You can go to GitHub and download the newest release.)
+                    </span>
+                </li>
+            </ul>
+            <p class="title2">Contact:</p>
+            <p class="info">
+                If you wanna chat, drop me an email to <a href="mailto:scrisqiu@hotmail.com">scrisqiu@hotmail.com</a>,
+                or via <a href="http://wpa.qq.com/msgrd?v=3&uin=1514303703&site=qq&menu=yes" target="_blank">QQ</a>.
+                And in case you wanna know me more, please visit my
+                <a href="https://github.com/RoderickQiu" target="_blank">Github</a>, my <a
+                    href="https://www.luogu.org/space/show?uid=85839" target="_blank">Luogu</a>
+                or my <a href="https://www.zhihu.com/people/_Qiu" target="_blank">Zhihu</a>.
+            </p>
         </div>
     </div>
+    <footer class="footer mx-auto py-4" id="footer">
+        <div class="container">
+            <hr />
+            &copy; 2019 <a href="https://roderickqiu.scris.top/">Roderick Qiu.</a> | <a href="https://scris.top">Back to
+                Scris</a>
+        </div>
+    </footer>
 </body>
 
 </html>
