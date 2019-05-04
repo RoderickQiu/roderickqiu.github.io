@@ -1,6 +1,6 @@
 html, body {
     font-family: "Source Han Sans CN", -apple-system, "Microsoft YaHei UI", "微软雅黑", sans-serif;
-    background-color: #fafafa;
+    background-color: rgb(253, 253, 253);
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
