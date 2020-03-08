@@ -1,5 +1,5 @@
-# roderickqiu.scris.top
+# r-q.name
 
-It's my homepage! [\[Visit\]](https://roderickqiu.scris.top/)
+It's my homepage! [\[Visit\]](https://r-q.name/)
 
-(c) Roderick Qiu.
+© Roderick Qiu.

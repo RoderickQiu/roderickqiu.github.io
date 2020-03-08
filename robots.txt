@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 404.html
+Disallow: baidu_verify_yTDqR4MKKA.html

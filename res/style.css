@@ -10,7 +10,7 @@ html, body {
 
 a {
     appearance: none;
-    color: rgb(68, 114, 196);
+    color: rgb(84, 144, 234);
 }
 
 dt {
@@ -24,6 +24,14 @@ hr {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+ul {
+    font-weight: lighter;
+}
+
+li {
+    padding-bottom: 8px;
+}
+
 #main {
     max-width: 88%;
 }
@@ -35,19 +43,27 @@ hr {
 
 .title1 {
     font-size: 32px;
-    color: rgb(68, 114, 196);
+    color: rgb(84, 144, 234);
     font-weight: bolder;
 }
 
 .smalltitle {
     font-size: 13px;
     color: rgb(64, 64, 64);
-    font-weight: bolder;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    padding-left: 3px;
 }
 
 .title2 {
     font-size: 28px;
-    color: rgb(68, 114, 196);
+    color: rgb(84, 144, 234);
+    line-height: 100%;
+}
+
+.title3 {
+    font-size: 20px;
+    color: rgb(84, 144, 234);
     line-height: 100%;
 }
 
@@ -62,7 +78,7 @@ hr {
 
 @media (min-width: 801px) {
     #main {
-        width: 72%;
+        width: 80%;
     }
     .title1 {
         font-size: 32px;
@@ -72,6 +88,9 @@ hr {
     }
     .title2 {
         font-size: 30px;
+    }
+    .title3 {
+        font-size: 24px;
     }
     .info {
         font-size: 20px;
@@ -83,12 +102,15 @@ hr {
 
 @media (min-width: 1281px) {
     #main {
-        width: 54%;
+        width: 72%;
     }
     .title1 {
         font-size: 48px;
     }
     .title2 {
         font-size: 36px;
+    }
+    .title3 {
+        font-size: 25px;
     }
 }
