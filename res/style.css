@@ -1,6 +1,6 @@
 html, body {
     font-family: "Source Han Sans CN", -apple-system, "Microsoft YaHei UI", "微软雅黑", sans-serif;
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(250, 245, 248);
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -10,7 +10,7 @@ html, body {
 
 a {
     appearance: none;
-    color: rgb(84, 144, 234);
+    color: rgb(252, 157, 205);
 }
 
 dt {
@@ -43,7 +43,7 @@ li {
 
 .title1 {
     font-size: 32px;
-    color: rgb(84, 144, 234);
+    color: rgb(241, 132, 188);
     font-weight: bolder;
 }
 
@@ -57,13 +57,13 @@ li {
 
 .title2 {
     font-size: 28px;
-    color: rgb(84, 144, 234);
+    color: rgb(252, 157, 205);
     line-height: 100%;
 }
 
 .title3 {
     font-size: 20px;
-    color: rgb(84, 144, 234);
+    color: rgb(252, 157, 205);
     line-height: 100%;
 }
 
@@ -86,21 +86,27 @@ li {
     #main {
         width: 80%;
     }
+
     .title1 {
         font-size: 32px;
     }
+
     .smalltitle {
         font-size: 15px;
     }
+
     .title2 {
         font-size: 30px;
     }
+
     .title3 {
         font-size: 24px;
     }
+
     .info {
         font-size: 20px;
     }
+
     .smalltext {
         font-size: 15px;
     }
@@ -110,12 +116,15 @@ li {
     #main {
         width: 72%;
     }
+
     .title1 {
         font-size: 48px;
     }
+
     .title2 {
         font-size: 36px;
     }
+
     .title3 {
         font-size: 25px;
     }
