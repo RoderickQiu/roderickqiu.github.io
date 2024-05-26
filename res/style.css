@@ -85,7 +85,7 @@ li {
 
 @media (min-width: 801px) {
     #main {
-        width: 80%;
+        width: 88%;
     }
     .title1 {
         font-size: 32px;
@@ -109,7 +109,7 @@ li {
 
 @media (min-width: 1281px) {
     #main {
-        width: 72%;
+        width: 81%;
     }
     .title1 {
         font-size: 48px;
