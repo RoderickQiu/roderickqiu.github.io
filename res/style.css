@@ -6,10 +6,11 @@ html, body {
     display: flex;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 :root {
-    --main-color: rgb(197, 122, 161);
+    --main-color: rgb(191, 105, 121);
 }
 
 a {
@@ -87,14 +88,22 @@ li {
     color: rgb(120, 120, 120);
 }
 
-.footer {
-    width: 100%;
-    text-align: center;
-}
-
 @media (min-width: 801px) {
     #main {
-        width: 68%;
+        width: 61%;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: fit-content;
+    }
+
+    #box {
+        margin: 1em 0;
+        width: 100%;
+        height: 100%;
     }
 
     .title1 {
@@ -124,7 +133,7 @@ li {
 
 @media (min-width: 1281px) {
     #main {
-        width: 61%;
+        width: 51%;
     }
 
     .title1 {
