@@ -35,7 +35,7 @@ li {
 }
 
 #main {
-    max-width: 88%;
+    max-width: 80%;
 }
 
 #footer {
@@ -90,7 +90,7 @@ li {
 
 @media (min-width: 801px) {
     #main {
-        width: 61%;
+        width: 55%;
         margin: auto;
         position: absolute;
         top: 0;
@@ -133,7 +133,7 @@ li {
 
 @media (min-width: 1281px) {
     #main {
-        width: 51%;
+        width: 49%;
     }
 
     .title1 {
@@ -146,5 +146,11 @@ li {
 
     .title3 {
         font-size: 25px;
+    }
+}
+
+@media (min-width: 1581px) {
+    #main {
+        width: 41%;
     }
 }
