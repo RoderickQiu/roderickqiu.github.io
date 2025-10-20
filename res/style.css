@@ -1,285 +1,178 @@
 html, body {
-    font-family: "Source Han Sans CN", -apple-system, "Microsoft YaHei UI", "微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: #eeeeee;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, system-ui, "Source Han Sans CN", "Microsoft YaHei UI", "微软雅黑", sans-serif;
+    background-color: #ffffff;
+    color: #111111;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100vh;
-    line-height: 1.6;
-    overflow: hidden;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-:root {
-    --main-color: #2c3e50;
-    --accent-color: #df3b3b;
-    --text-color: #2c3e50;
-    --light-text: #7f8c8d;
-    --border-color: #ecf0f1;
-    --background-light: #ffffff;
-}
-
-a {
-    appearance: none;
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: var(--main-color);
-    text-decoration: underline;
-}
-
-dt {
-    font-weight: bolder;
-    font-style: italic;
-}
-
-hr {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 1px solid var(--border-color);
-}
-
-li {
-    padding-bottom: 8px;
-}
-
-#footer {
-    font-size: 12px;
-    color: var(--light-text);
-}
-
-.header {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid var(--border-color);
+.container {
     display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-}
-
-.header-content {
-    flex: 1;
-}
-
-.profile-image {
-    flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
+    height: 100vh;
+    width: 100vw;
+    letter-spacing: -0.01em;
     justify-content: center;
+    align-items: center;
 }
 
-.circular-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    border: 3px solid var(--background-light);
+.content {
+    padding: min(14vh, 140px) min(10vw, 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 820px;
 }
 
-.title1 {
-    font-size: 2.5rem;
-    color: var(--main-color);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.5px;
+.name {
+    font-size: clamp(44px, 6.2vw, 72px);
+    font-weight: 800;
+    color: #8b1538;
+    margin: 0 0 0px 0;
+    letter-spacing: -0.02em;
 }
 
 .subtitle {
-    font-size: 1rem;
-    padding-left: 0.15rem;
-    color: var(--light-text);
+    font-size: clamp(12px, 1.5vw, 16px);
+    font-weight: 400;
+    color: #666;
+    margin: 0 0 16px 2px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.description {
+    font-size: clamp(16px, 2.1vw, 19px);
+    color: #4a4a4a;
+    margin: 0 0 18px 0;
     font-weight: 400;
 }
 
-.smalltitle {
-    font-size: 13px;
-    color: var(--light-text);
-    font-weight: lighter;
-    letter-spacing: 3px;
-    padding-left: 3px;
-}
-
-.lighter {
-    font-weight: lighter;
-}
-
-.info {
-    font-size: 1rem;
-    color: var(--text-color);
-    line-height: 1.7;
-}
-
-.smalltext {
-    font-size: 12px;
-    color: var(--light-text);
-}
-
-.extreme-small {
-    font-size: 10px;
-    color: var(--light-text);
-}
-
-.research-section {
-    margin-bottom: 2.5rem;
-}
-
-.section-title {
-    font-size: 1.2rem;
-    color: var(--main-color);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
-}
-
-.interests-list li:last-child {
-    border-bottom: none;
-}
-
-.achievements ul {
-    padding-left: 1.5rem;
-}
-
-.achievements li {
-    margin-bottom: 0.75rem;
-}
-
-.links {
-    margin-top: 1rem;
-}
-
-.links p {
-    font-size: 1rem;
-    margin: 0;
-}
-
-#box {
-    width: 100%;
-    height: 100vh;
+.achievements {
+    font-size: clamp(15px, 1.9vw, 18px);
+    color: #222222;
+    margin: 0 0 26px 0;
     display: flex;
-    align-items: center;
-    padding: 3rem;
-    align-content: center;
-    justify-content: center;
+    gap: 6px;
 }
 
-#main {
-    background: var(--background-light);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    height: 100vh;
-    overflow-y: auto;
-    display: block;
-    margin: 0.5rem 0.5rem;
-    padding: 2rem 2rem;
-    height: calc(100vh - 4rem);
-    width: calc(100vw - 4rem);
-    max-width: 84%;
-    position: relative;
+.achievement-item {
+    display: inline;
 }
 
-@media (min-width: 801px) {
-    #main {
-        margin: 3rem 3rem;
-        padding: 3rem 3rem;
-        height: calc(100vh - 6rem);
-        width: calc(100vw - 6rem);
-        max-width: 80%;
-    }
-
-    .title1 {
-        font-size: 3rem;
-    }
-
-    .info {
-        font-size: 1.05rem;
-    }
-
-    .smalltext {
-        font-size: 15px;
-    }
+.achievement-item:not(:last-child)::after {
+    content: "·";
+    color: #666;
 }
 
-@media (min-width: 901px) {
-    #main {
-        max-width: 66%;
-        margin: 3.5rem 3.5rem;
-    }
+.resume-link {
+    font-size: 16px;
 }
 
-@media (min-width: 1025px) {
-    #main {
-        max-width: 66%;
-        margin: 4rem 4rem;
-    }
+.button {
+    display: inline-block;
+    padding: 12px 18px;
+    border: 1px solid #8b1538;
+    border-radius: 10px;
+    color: #8b1538;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease, transform .05s ease, box-shadow .2s ease;
 }
 
-@media (min-width: 1281px) {
-    .title1 {
-        font-size: 3.5rem;
-    }
-
-    #main {
-        max-width: 62.5%;
-        margin: 4.5rem 4.5rem;
-    }
+.button:hover {
+    background-color: #8b1538;
+    color: #ffffff;
+    box-shadow: 0 4px 18px rgba(139, 21, 56, 0.2);
 }
 
-@media (min-width: 1581px) {
-    #main {
-        max-width: 54%;
-        margin: 5rem 5rem;
-    }
+.button:active {
+    transform: translateY(1px);
 }
 
-/* Handle small viewport heights */
-@media (max-height: 600px) {
-    #main {
-        padding: 1rem 1rem;
-        height: calc(100vh - 2rem);
-        width: calc(100vw - 2rem);
-    }
-    
-    #box {
-        align-items: flex-start;
-        padding-top: 1rem;
-    }
-    
-    .title1 {
-        font-size: 2rem;
-    }
-    
-    .info {
-        font-size: 0.95rem;
-    }
+a {
+    color: #8b1538;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
 }
 
-/* Responsive design for header layout */
+a:hover {
+    background-size: 100% 2px;
+    color: #6b0f2a;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-    .header {
+    .content {
+        padding: 8vh 6vw;
+        max-width: none;
+    }
+    
+    .name {
+        font-size: clamp(42px, 9vw, 56px);
+        margin-bottom: 4px;
+    }
+    
+    .subtitle {
+        font-size: clamp(11px, 2.5vw, 14px);
+        margin-bottom: 12px;
+    }
+    
+    .description {
+        font-size: clamp(18px, 4.5vw, 22px);
+        margin-bottom: 16px;
+    }
+    
+    .achievements {
+        font-size: clamp(16px, 4vw, 20px);
+        margin-bottom: 24px;
         flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
-        text-align: center;
+        gap: 8px;
     }
     
-    .profile-image {
-        order: -1;
+    .achievement-item {
+        display: block;
     }
     
-    .circular-image {
-        width: 100px;
-        height: 100px;
+    .achievement-item:not(:last-child)::after {
+        content: "";
+    }
+    
+    .button {
+        padding: 10px 16px;
+        font-size: 17px;
     }
 }
 
 @media (max-width: 480px) {
-    .circular-image {
-        width: 80px;
-        height: 80px;
+    .content {
+        padding: 3vh 3vw;
+    }
+    
+    .name {
+        font-size: clamp(38px, 10vw, 50px);
+    }
+    
+    .subtitle {
+        font-size: clamp(10px, 3vw, 13px);
+    }
+    
+    .description {
+        font-size: clamp(16px, 5vw, 20px);
+    }
+    
+    .achievements {
+        font-size: clamp(15px, 4.5vw, 18px);
+    }
+    
+    .button {
+        padding: 8px 14px;
+        font-size: 16px;
     }
 }
