@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #8b1538;
+    --primary-color-hover: #6b0f2a;
+}
+
 html, body {
     font-family: Georgia, "Times New Roman", Times, "Source Han Serif CN", "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
     background-color: #ffffff;
@@ -31,9 +36,10 @@ html, body {
 .name {
     font-size: clamp(44px, 6.2vw, 72px);
     font-weight: 800;
-    color: #8b1538;
+    color: var(--primary-color);
     margin: 0 0 0px 0;
     letter-spacing: -0.02em;
+    transition: color 0.2s ease;
 }
 
 .subtitle {
@@ -76,15 +82,15 @@ html, body {
 .button {
     display: inline-block;
     padding: 12px 18px;
-    border: 1px solid #8b1538;
+    border: 1px solid var(--primary-color);
     border-radius: 10px;
-    color: #8b1538;
+    color: var(--primary-color);
     text-decoration: none;
-    transition: background-color .2s ease, color .2s ease, transform .05s ease, box-shadow .2s ease;
+    transition: background-color .2s ease, color .2s ease, transform .05s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
 .button:hover {
-    background-color: #8b1538;
+    background-color: var(--primary-color);
     color: #ffffff;
     box-shadow: 0 4px 18px rgba(139, 21, 56, 0.2);
 }
@@ -94,44 +100,58 @@ html, body {
 }
 
 a {
-    color: #8b1538;
+    color: var(--primary-color);
     text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
     background-size: 100% 1px;
     background-repeat: no-repeat;
     background-position: 0 100%;
+    transition: color 0.2s ease, background-color 0.2s ease, background-image 0.2s ease;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+a:visited {
+    color: var(--primary-color);
 }
 
 a:hover {
-    background-size: 100% 2px;
-    color: #6b0f2a;
+    background-image: none;
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+a:visited:hover {
+    background-image: none;
+    background-color: var(--primary-color);
+    color: #ffffff;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     .content {
-        padding: 8vh 6vw;
+        padding: 8vh 8vw;
         margin-left: 10px;
         max-width: none;
     }
     
     .name {
-        font-size: clamp(42px, 9vw, 56px);
+        font-size: clamp(48px, 10vw, 64px);
         margin-bottom: 4px;
     }
     
     .subtitle {
-        font-size: clamp(11px, 2.5vw, 14px);
+        font-size: clamp(13px, 3vw, 16px);
         margin-bottom: 12px;
     }
     
     .description {
-        font-size: clamp(18px, 4.5vw, 22px);
+        font-size: clamp(20px, 5vw, 24px);
         margin-bottom: 16px;
     }
     
     .achievements {
-        font-size: clamp(16px, 4vw, 20px);
+        font-size: clamp(18px, 4.5vw, 22px);
         margin-bottom: 24px;
         flex-direction: column;
         gap: 8px;
@@ -147,34 +167,34 @@ a:hover {
     
     .button {
         padding: 10px 16px;
-        font-size: 17px;
+        font-size: 19px;
     }
 }
 
 @media (max-width: 480px) {
     .content {
-        padding: 3vh 3vw;
+        padding: 3vh 5vw;
         margin-left: 15px;
     }
     
     .name {
-        font-size: clamp(38px, 10vw, 50px);
+        font-size: clamp(44px, 11vw, 58px);
     }
     
     .subtitle {
-        font-size: clamp(10px, 3vw, 13px);
+        font-size: clamp(12px, 3.5vw, 15px);
     }
     
     .description {
-        font-size: clamp(16px, 5vw, 20px);
+        font-size: clamp(18px, 5.5vw, 22px);
     }
     
     .achievements {
-        font-size: clamp(15px, 4.5vw, 18px);
+        font-size: clamp(17px, 5vw, 20px);
     }
     
     .button {
         padding: 8px 14px;
-        font-size: 16px;
+        font-size: 18px;
     }
 }
