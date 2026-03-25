@@ -11,6 +11,34 @@
     --text-tertiary: #7a746b;
     --line-color: rgba(23, 23, 23, 0.08);
     --shadow-color: rgba(45, 28, 33, 0.12);
+    --grid-line-color: rgba(23, 23, 23, 0.03);
+    --panel-border-color: rgba(255, 255, 255, 0.5);
+    --panel-highlight: rgba(255, 255, 255, 0.9);
+    --card-border-color: rgba(23, 23, 23, 0.08);
+    --card-shadow: rgba(23, 23, 23, 0.04);
+    --accent-glow: rgba(160, 63, 88, 0.14);
+    --hero-orb-shadow: rgba(30, 30, 30, 0.12);
+    --ambient-tint-soft: hsl(var(--hue) 46% 46% / 0.12);
+    --ambient-tint-strong: hsl(var(--hue) 54% 46% / 0.28);
+    --panel-tint-soft: hsl(var(--hue) 48% 46% / 0.10);
+    --body-bg:
+        radial-gradient(circle at top left, var(--ambient-tint-soft), transparent 32%),
+        radial-gradient(circle at 85% 15%, rgba(197, 176, 140, 0.18), transparent 28%),
+        linear-gradient(135deg, #f7f4ef 0%, #efe8df 52%, #f8f4ed 100%);
+    --orb-bg:
+        radial-gradient(circle at 30% 30%, var(--ambient-tint-strong), transparent 36%),
+        radial-gradient(circle at 70% 70%, var(--hero-orb-shadow), transparent 40%);
+    --panel-bg:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 250, 243, 0.82)),
+        var(--bg-panel);
+    --panel-overlay:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.6), transparent 34%),
+        linear-gradient(90deg, transparent 0, transparent calc(100% - 168px), rgba(23, 23, 23, 0.06) calc(100% - 168px), rgba(23, 23, 23, 0.06) calc(100% - 167px), transparent calc(100% - 167px)),
+        radial-gradient(circle at 18% 26%, var(--panel-tint-soft), transparent 42%);
+    --panel-corner-bg:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 244, 236, 0.35)),
+        repeating-linear-gradient(90deg, rgba(23, 23, 23, 0.05) 0 1px, transparent 1px 10px),
+        repeating-linear-gradient(0deg, rgba(23, 23, 23, 0.04) 0 1px, transparent 1px 12px);
 
     --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-serif: ui-serif, Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, Times New Roman, serif;
@@ -26,15 +54,12 @@
 
 html,
 body {
+    color-scheme: light;
     margin: 0;
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    /* Fallback first (avoid relying on color-mix support). */
-    background:
-        radial-gradient(circle at top left, rgba(160, 63, 88, 0.12), transparent 32%),
-        radial-gradient(circle at 85% 15%, rgba(197, 176, 140, 0.18), transparent 28%),
-        linear-gradient(135deg, #f7f4ef 0%, #efe8df 52%, #f8f4ed 100%);
+    background: var(--body-bg);
     color: var(--text-primary);
     font-family: var(--font-sans);
     line-height: 1.6;
@@ -52,6 +77,10 @@ body {
     :root {
         animation: hueDrift 56s linear infinite;
     }
+
+    .content::before {
+        animation: sheenShift 10s ease-in-out infinite alternate;
+    }
 }
 
 body::before,
@@ -64,8 +93,8 @@ body::after {
 
 body::before {
     background-image:
-        linear-gradient(rgba(23, 23, 23, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(23, 23, 23, 0.03) 1px, transparent 1px);
+        linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px);
     background-size: 32px 32px;
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 85%);
 }
@@ -77,10 +106,7 @@ body::after {
     min-width: 320px;
     min-height: 320px;
     border-radius: 999px;
-    /* Fallback first (avoid relying on color-mix support). */
-    background:
-        radial-gradient(circle at 30% 30%, rgba(160, 63, 88, 0.28), transparent 36%),
-        radial-gradient(circle at 70% 70%, rgba(30, 30, 30, 0.12), transparent 40%);
+    background: var(--orb-bg);
     filter: blur(34px);
     opacity: 0.9;
     animation: ambientFloat 14s ease-in-out infinite alternate;
@@ -100,14 +126,12 @@ body::after {
     position: relative;
     width: min(920px, calc(100vw - 96px));
     padding: clamp(32px, 4vw, 54px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--panel-border-color);
     border-radius: 30px;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 250, 243, 0.82)),
-        var(--bg-panel);
+    background: var(--panel-bg);
     box-shadow:
         0 24px 80px var(--shadow-color),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        inset 0 1px 0 var(--panel-highlight);
     backdrop-filter: blur(18px);
     overflow: hidden;
     animation: panelDrift 9s ease-in-out infinite;
@@ -117,12 +141,8 @@ body::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        linear-gradient(120deg, rgba(255, 255, 255, 0.6), transparent 34%),
-        linear-gradient(90deg, transparent 0, transparent calc(100% - 168px), rgba(23, 23, 23, 0.06) calc(100% - 168px), rgba(23, 23, 23, 0.06) calc(100% - 167px), transparent calc(100% - 167px)),
-        radial-gradient(circle at 18% 26%, rgba(160, 63, 88, 0.10), transparent 42%);
+    background: var(--panel-overlay);
     pointer-events: none;
-    animation: sheenShift 10s ease-in-out infinite alternate;
 }
 
 .content::after {
@@ -133,12 +153,9 @@ body::after {
     width: 92px;
     height: 92px;
     border-radius: 24px;
-    border: 1px solid rgba(23, 23, 23, 0.08);
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 244, 236, 0.35)),
-        repeating-linear-gradient(90deg, rgba(23, 23, 23, 0.05) 0 1px, transparent 1px 10px),
-        repeating-linear-gradient(0deg, rgba(23, 23, 23, 0.04) 0 1px, transparent 1px 12px);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--card-border-color);
+    background: var(--panel-corner-bg);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--panel-highlight) 90%, transparent);
     opacity: 0.9;
     pointer-events: none;
 }
@@ -169,9 +186,9 @@ body::after {
     gap: 10px;
     margin: 22px 0 18px;
     padding: 8px 12px;
-    border: 1px solid rgba(23, 23, 23, 0.08);
+    border: 1px solid var(--card-border-color);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.62);
+    background: color-mix(in srgb, var(--bg-panel-strong) 68%, transparent);
     color: var(--text-secondary);
     font-family: var(--font-mono);
     font-size: clamp(11px, 1vw, 13px);
@@ -186,7 +203,7 @@ body::after {
     height: 8px;
     border-radius: 50%;
     background: var(--primary-color);
-    box-shadow: 0 0 0 5px rgba(160, 63, 88, 0.14);
+    box-shadow: 0 0 0 5px var(--accent-glow);
     flex: 0 0 auto;
 }
 
@@ -220,12 +237,12 @@ body::after {
     align-items: center;
     gap: 10px;
     padding: 12px 16px;
-    border: 1px solid rgba(23, 23, 23, 0.08);
+    border: 1px solid var(--card-border-color);
     border-radius: 14px;
     background: var(--bg-panel-strong);
     box-shadow:
-        0 12px 30px rgba(23, 23, 23, 0.04),
-        inset 0 1px 0 rgba(255, 255, 255, 0.92);
+        0 12px 30px var(--card-shadow),
+        inset 0 1px 0 color-mix(in srgb, var(--panel-highlight) 100%, transparent);
     font-family: var(--font-mono);
     font-size: clamp(13px, 1.25vw, 15px);
     letter-spacing: 0.02em;
@@ -282,10 +299,10 @@ a:visited {
 .achievement-item a:hover,
 .achievement-item a:focus-visible {
     transform: translateY(-2px);
-    border-color: rgba(160, 63, 88, 0.24);
+    border-color: color-mix(in srgb, var(--primary-color) 24%, transparent);
     box-shadow:
-        0 18px 38px rgba(160, 63, 88, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        0 18px 38px color-mix(in srgb, var(--primary-color) 12%, transparent),
+        inset 0 1px 0 color-mix(in srgb, var(--panel-highlight) 100%, transparent);
     color: var(--primary-color);
 }
 
@@ -298,7 +315,7 @@ a:visited {
     align-items: center;
     justify-content: center;
     padding: 12px 18px;
-    border: 1px solid rgba(23, 23, 23, 0.1);
+    border: 1px solid var(--card-border-color);
     border-radius: 14px;
     background: var(--bg-panel-strong);
 }
@@ -306,11 +323,11 @@ a:visited {
 .button:hover,
 .button:focus-visible {
     color: var(--primary-color);
-    border-color: rgba(160, 63, 88, 0.24);
+    border-color: color-mix(in srgb, var(--primary-color) 24%, transparent);
 }
 
 a:focus-visible {
-    outline: 2px solid rgba(160, 63, 88, 0.35);
+    outline: 2px solid color-mix(in srgb, var(--primary-color) 35%, transparent);
     outline-offset: 3px;
 }
 
@@ -376,6 +393,66 @@ a:focus-visible {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --primary-color: hsl(var(--hue) 70% 72%);
+        --primary-color-hover: hsl(var(--hue) 72% 78%);
+        --bg-color: #0f1012;
+        --bg-panel: rgba(20, 22, 26, 0.78);
+        --bg-panel-strong: rgba(24, 26, 31, 0.92);
+        --text-primary: #f5f1ea;
+        --text-secondary: #c7c0b5;
+        --text-tertiary: #988f83;
+        --line-color: rgba(255, 255, 255, 0.1);
+        --shadow-color: rgba(0, 0, 0, 0.34);
+        --grid-line-color: rgba(255, 255, 255, 0.04);
+        --panel-border-color: rgba(255, 255, 255, 0.08);
+        --panel-highlight: rgba(255, 255, 255, 0.09);
+        --card-border-color: rgba(255, 255, 255, 0.08);
+        --card-shadow: rgba(0, 0, 0, 0.22);
+        --accent-glow: rgba(233, 138, 169, 0.18);
+        --hero-orb-shadow: rgba(0, 0, 0, 0.26);
+        --ambient-tint-soft: hsl(var(--hue) 52% 56% / 0.24);
+        --ambient-tint-strong: hsl(var(--hue) 58% 60% / 0.22);
+        --panel-tint-soft: hsl(var(--hue) 56% 60% / 0.16);
+        --body-bg:
+            radial-gradient(circle at top left, var(--ambient-tint-soft), transparent 32%),
+            radial-gradient(circle at 85% 15%, rgba(128, 100, 67, 0.18), transparent 28%),
+            linear-gradient(135deg, #111216 0%, #16181d 48%, #0d0e11 100%);
+        --orb-bg:
+            radial-gradient(circle at 30% 30%, var(--ambient-tint-strong), transparent 34%),
+            radial-gradient(circle at 70% 70%, var(--hero-orb-shadow), transparent 40%);
+        --panel-bg:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+            var(--bg-panel);
+        --panel-overlay:
+            linear-gradient(120deg, rgba(255, 255, 255, 0.04), transparent 36%),
+            linear-gradient(90deg, transparent 0, transparent calc(100% - 168px), rgba(255, 255, 255, 0.06) calc(100% - 168px), rgba(255, 255, 255, 0.06) calc(100% - 167px), transparent calc(100% - 167px)),
+            radial-gradient(circle at 18% 26%, var(--panel-tint-soft), transparent 42%);
+        --panel-corner-bg:
+            linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02)),
+            repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 10px),
+            repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 12px);
+    }
+
+    .description a::after {
+        background: linear-gradient(90deg, currentColor, rgba(233, 138, 169, 0.45));
+    }
+
+    body::after {
+        width: 36vw;
+        height: 36vw;
+        opacity: 0.58;
+        filter: blur(46px);
+        animation-duration: 20s;
+    }
+
+    .content::before {
+        animation: none;
+    }
+}
+
 /* 404 page (keeps HTML untouched, adds missing styles). */
 .align-content-center {
     min-height: 100vh;
@@ -417,20 +494,19 @@ a:focus-visible {
     body {
         background:
             radial-gradient(circle at top left, color-mix(in srgb, var(--primary-color) 18%, transparent), transparent 32%),
-            radial-gradient(circle at 85% 15%, rgba(197, 176, 140, 0.18), transparent 28%),
-            linear-gradient(135deg, #f7f4ef 0%, #efe8df 52%, #f8f4ed 100%);
+            var(--body-bg);
     }
 
     body::after {
         background:
             radial-gradient(circle at 30% 30%, color-mix(in srgb, var(--primary-color) 42%, transparent), transparent 36%),
-            radial-gradient(circle at 70% 70%, rgba(30, 30, 30, 0.12), transparent 40%);
+            radial-gradient(circle at 70% 70%, var(--hero-orb-shadow), transparent 40%);
     }
 
     .content::before {
         background:
-            linear-gradient(120deg, rgba(255, 255, 255, 0.6), transparent 34%),
-            linear-gradient(90deg, transparent 0, transparent calc(100% - 168px), rgba(23, 23, 23, 0.06) calc(100% - 168px), rgba(23, 23, 23, 0.06) calc(100% - 167px), transparent calc(100% - 167px)),
+            linear-gradient(120deg, color-mix(in srgb, var(--panel-highlight) 66%, transparent), transparent 34%),
+            linear-gradient(90deg, transparent 0, transparent calc(100% - 168px), var(--card-border-color) calc(100% - 168px), var(--card-border-color) calc(100% - 167px), transparent calc(100% - 167px)),
             radial-gradient(circle at 18% 26%, color-mix(in srgb, var(--primary-color) 12%, transparent), transparent 42%);
     }
 
@@ -445,7 +521,7 @@ a:focus-visible {
         border-color: color-mix(in srgb, var(--primary-color) 24%, transparent);
         box-shadow:
             0 18px 38px color-mix(in srgb, var(--primary-color) 12%, transparent),
-            inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            inset 0 1px 0 color-mix(in srgb, var(--panel-highlight) 100%, transparent);
     }
 }
 
@@ -539,5 +615,13 @@ a:focus-visible {
     .achievement-item a {
         justify-content: flex-start;
         padding: 14px 16px;
+    }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 640px) {
+    .content::before {
+        background:
+            linear-gradient(120deg, rgba(255, 255, 255, 0.02), transparent 28%),
+            radial-gradient(circle at 16% 20%, rgba(190, 87, 121, 0.10), transparent 34%);
     }
 }
