@@ -208,9 +208,9 @@ body::after {
 }
 
 .description {
-    max-width: 32ch;
+    max-width: 40ch;
     margin: 0 0 28px;
-    font-size: clamp(20px, 2.3vw, 31px);
+    font-size: clamp(15px, 1.6vw, 22px);
     line-height: 1.3;
     font-weight: 400;
     color: var(--text-secondary);
